@@ -1,4 +1,6 @@
-// require(dotenv).config()
+import dotenv from 'dotenv'
+dotenv.config()
+
 import mongoose from "mongoose"
 
 const dbConnection={
@@ -7,5 +9,6 @@ const dbConnection={
 }
 
 async function Connect(){
-    mongoose.connect(dbUri,dbConnection)
+    mongoose.connect(process.env.dbUri,dbConnection)
 }
+export default Connect
